@@ -1,0 +1,18 @@
+<openerp>
+    <data>
+
+        <record id="view_purchase_picking_form" model="ir.ui.view">
+            <field name="name">Purchase Picking Form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+		<field name="note" position="replace">
+		    <field name="purchase_notes" nolabel="1" attrs="{'invisible': [('purchase', '=', False)]}" />
+		    <field name="sale_notes" nolabel="1" attrs="{'invisible': [('sale', '=', False)]}" />
+		</field>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>
