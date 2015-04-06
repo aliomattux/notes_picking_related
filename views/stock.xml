@@ -7,6 +7,7 @@
             <field name="inherit_id" ref="stock.view_picking_form" />
             <field name="arch" type="xml">
 		<field name="note" position="replace">
+		    <field name="note" attrs="{'invisible': [('picking_type_code','!=','internal')]}" />
 		    <field name="purchase_notes" nolabel="1" attrs="{'invisible': [('purchase', '=', False)]}" />
 		    <field name="sale_notes" nolabel="1" attrs="{'invisible': [('sale', '=', False)]}" />
 		</field>

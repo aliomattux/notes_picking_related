@@ -4,5 +4,6 @@ class StockPicking(osv.osv):
     _inherit = 'stock.picking'
     _columns = {
         'purchase_notes': fields.related('purchase', 'notes', string='Purchase Notes', type="text"),
+	'note': fields.text('Notes'),	
 	'sale_notes': fields.related('sale_id', 'note', string='Sale Notes', type="text"),
     }
